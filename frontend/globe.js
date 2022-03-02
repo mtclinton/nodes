@@ -125,11 +125,11 @@ function renderGlobe() {
         renderer.setClearColor(0xffffff, 0);
 
         // render to page
-        document.body.appendChild(renderer.domElement);
+        //document.body.appendChild(renderer.domElement);
 
         // // add it to the target element
-        // var mapDiv = document.getElementById("globe");
-        // mapDiv.appendChild(renderer.domElement);
+        var mapDiv = document.getElementById("globe");
+        mapDiv.appendChild(renderer.domElement);
 
         // Setup scene
         const scene = new THREE.Scene();
