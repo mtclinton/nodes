@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	_ "github.com/mattn/go-sqlite3"
 	"github.com/gin-gonic/gin"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 // Node type
@@ -197,6 +197,7 @@ func main() {
 
 	r.StaticFile("/globe-data-min.json", "./frontend/globe-data-min.json")
 
+	r.StaticFile("/geocluster.js", "./frontend/geocluster.js")
 	r.StaticFile("/globe.js", "./frontend/globe.js")
 
 
