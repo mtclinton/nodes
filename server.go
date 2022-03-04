@@ -58,6 +58,7 @@ func GetSeedsFromDNS(dnsSeeds []string) []Node {
 		wait.Add(1)
 		go func(address string) {
 			defer wait.Done()
+			fmt.Println("Requesting nodes from: ", address)
 			ips, err := net.LookupIP(address)
 			if err != nil {
 				return
@@ -134,6 +135,8 @@ func getJson(url string) (Coordinate,error) {
 func setupDB() (*sql.DB, error) {
 
 	if _, err := os.Stat("nodes.db"); os.IsNotExist(err) {
+		fmt.Println("Creating and populating database. Please wait.")
+
 		file, err := os.Create("nodes.db")
 		if err != nil {
 			log.Fatal(err.Error())
