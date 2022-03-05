@@ -41,11 +41,11 @@ function renderGlobe() {
             n.push(parseFloat(nodes[i]['lon']))
             coordinates.push(n)
         }
-        console.log(coordinates)
+        //console.log(coordinates)
 
         var result = geocluster(coordinates, bias);
 
-        console.log(result)
+        //console.log(result)
 
         const nodeCentroidData = result.map((coordinate) => ({
             lat: coordinate['centroid'][0],
@@ -53,7 +53,7 @@ function renderGlobe() {
             size: coordinate['elements'].length / 100,
             color: "#33e3ff"
         }));
-        console.log(nodeCentroidData)
+        //console.log(nodeCentroidData)
 
 
         // Initialize the Globe
